@@ -1,0 +1,9 @@
+1. Database baglanma
+connection=DriverManager.getConnection(“url”, “kullaniciAdi”, “sifre”);
+2.Query gonderip data alma
+statement=connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+3. Bu dataları test caselerde kullanıp assertion yapma.  ResultSet objesiyle datayı kullanırız.
+resultSet = statement.executeQuery("SELECT * FROM Book;”);
+String beklenenDeger = resultSet.getString(“BookName”);
+Assert.assertEquals(beklenenDeger, gercekDeger);
+
